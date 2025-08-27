@@ -8,6 +8,8 @@ namespace ProblemSolving.LeetCode.Array_String
 {
     public class MergeSortedArray88
     {
+        //https://leetcode.com/problems/merge-sorted-array/description/
+
         public void Merge(int[] nums1, int m, int[] nums2, int n)
         {
             for (int i = m + n - 1; i >= n; i--)
