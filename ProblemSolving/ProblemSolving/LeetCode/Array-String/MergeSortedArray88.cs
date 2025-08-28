@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProblemSolving.LeetCode.Array_String
+﻿namespace ProblemSolving.LeetCode.Array_String
 {
     public class MergeSortedArray88
     {
-        //https://leetcode.com/problems/merge-sorted-array/description/
+        //https://leetcode.com/problems/merge-sorted-array
 
         public void Merge(int[] nums1, int m, int[] nums2, int n)
         {
