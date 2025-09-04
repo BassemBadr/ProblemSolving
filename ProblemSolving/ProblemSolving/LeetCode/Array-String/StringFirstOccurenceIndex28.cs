@@ -6,11 +6,16 @@ namespace ProblemSolving.LeetCode.Array_String
         //https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string
         public int StrStr(string haystack, string needle)
         {
-            return BoyerMoorePatternSearch(haystack, needle);
+            return Solution1(haystack, needle);
         }
 
-        private int BoyerMoorePatternSearch(string haystack, string needle)
+        private int HalfBoyerMoorePatternSearch(string haystack, string needle)
         {
+            //  try to implement some sort of Boyer-Moore pattern search algorithm just for the fun of it
+            //  this is only the bad match table part, i need to still do the good suffix part, maybe later i will 
+            //  time complexity of O(m*n) but in rare case in practical, i think when all the haystack is the same letter
+            //  space complexity of O(k) which is unique characters in needle for the bad match table
+
             if (needle.Length > haystack.Length)
                 return -1;
             Dictionary<char, int> badMatchTable = CreateBadMatchTable(needle);
