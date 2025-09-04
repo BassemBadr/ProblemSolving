@@ -313,7 +313,6 @@ namespace ProblemSolving.Tests.LeetCode.Array_String
             int actual = _solution.StrStr(haystack, needle);
 
             // Assert
-            Assert.IsTrue(haystack.Length <= 10000, "Test setup should be within bounds");
             Assert.That(actual, Is.EqualTo(expected));
         }
 
@@ -415,6 +414,21 @@ namespace ProblemSolving.Tests.LeetCode.Array_String
             string haystack = "abcabc";
             string needle = "c";
             int expected = 2;
+
+            // Act
+            int actual = _solution.StrStr(haystack, needle);
+
+            // Assert
+            Assert.That(actual, Is.EqualTo(expected));
+        }
+
+        [Test]
+        public void FindNeedle_BoyerMoore_ReturnsFirstIndex()
+        {
+            // Arrange
+            string haystack = "trusthardtoothbrushes";
+            string needle = "tooth";
+            int expected = 9;
 
             // Act
             int actual = _solution.StrStr(haystack, needle);

@@ -1,9 +1,68 @@
-﻿namespace ProblemSolving.LeetCode.Array_String
+﻿
+namespace ProblemSolving.LeetCode.Array_String
 {
     public class StringFirstOccurenceIndex28
     {
         //https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string
         public int StrStr(string haystack, string needle)
+        {
+            return BoyerMoorePatternSearch(haystack, needle);
+        }
+
+        private int BoyerMoorePatternSearch(string haystack, string needle)
+        {
+            if (needle.Length > haystack.Length)
+                return -1;
+            Dictionary<char, int> badMatchTable = CreateBadMatchTable(needle);
+            int i = 0;
+            while (i < haystack.Length)
+            {
+                bool isFound = true;
+                for (int j = needle.Length - 1; j >= 0; j--)
+                {
+                    if ((i + j) >= haystack.Length)
+                        return -1;
+                    if (needle[j] != haystack[i + j])
+                    {
+                        isFound = false;
+                        if (badMatchTable.TryGetValue(haystack[i + j], out int value))
+                        {
+                            i += value;
+                            break;
+                        }
+                        else
+                        {
+                            i += needle.Length;
+                            break;
+                        }
+                    }
+                }
+                if (isFound) return i;
+            }
+            return -1;
+        }
+
+        private Dictionary<char, int> CreateBadMatchTable(string needle)
+        {
+            int length = needle.Length;
+            var table = new Dictionary<char, int>();
+
+            // Default shift for characters not in pattern
+            foreach (char c in needle)
+            {
+                table[c] = length;
+            }
+
+            // Update shifts for characters in pattern (except last)
+            for (int i = 0; i < length - 1; i++)
+            {
+                table[needle[i]] = length - i - 1;
+            }
+
+            return table;
+        }
+
+        private int Solution2(string haystack, string needle)
         {
             //  removed the substring creation with each loop and substituted with a check function to verify the needle existance 
             //  without the extra memory overhead
