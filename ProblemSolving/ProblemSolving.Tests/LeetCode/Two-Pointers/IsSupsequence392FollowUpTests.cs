@@ -83,7 +83,7 @@ namespace ProblemSolving.Tests.LeetCode.Two_Pointers
             bool result = _checker.IsSubsequence(s);
 
             // Assert
-            Assert.IsFalse(result);
+            Assert.That(result, Is.False);
         }
 
         // Edge cases with different T strings
@@ -139,7 +139,7 @@ namespace ProblemSolving.Tests.LeetCode.Two_Pointers
             bool result = _checker.IsSubsequence(s);
 
             // Assert
-            Assert.IsFalse(result);
+            Assert.That(result, Is.False);
         }
 
         [Test]
