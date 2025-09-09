@@ -5,6 +5,115 @@
         //https://leetcode.com/problems/word-pattern
         public bool WordPattern(string pattern, string s)
         {
+            return Solution4(pattern, s);
+        }
+
+        private static bool Solution5(string pattern, string s)
+        {
+            string[] wordList = s.Split(" ");
+            if (pattern.Length != wordList.Length)
+                return false;
+
+            string[] charToWord = new string[256];
+            Dictionary<string, char> wordToChar = [];
+
+            for (int i = 0; i < pattern.Length; i++)
+            {
+                string word = wordList[i];
+                char c = pattern[i];
+                if (charToWord[c] != null)
+                {
+                    if (charToWord[c] != word)
+                        return false;
+                }
+                else
+                {
+                    if (wordToChar.ContainsKey(word))
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        charToWord[c] = word;
+                        wordToChar.Add(word, c);
+                    }
+                }
+            }
+            return true;
+        }
+
+        private static bool Solution4(string pattern, string s)
+        {
+            //  clean up checks and use dictionary for key and value 
+            string[] wordList = s.Split(" ");
+            if (pattern.Length != wordList.Length)
+                return false;
+            Dictionary<char, string> mapping = [];
+            for (int i = 0; i < pattern.Length; i++)
+            {
+                string word = wordList[i];
+                char c = pattern[i];
+                if (mapping.ContainsKey(c))
+                {
+                    if (mapping[c] != word)
+                        return false;
+                }
+                else
+                {
+                    if (mapping.ContainsValue(word))    //  need to find replacement for this
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        mapping.Add(c, word);
+                    }
+                }
+            }
+            return true;
+        }
+
+        private static bool Solution3(string pattern, string s)
+        {
+            //  time O(n + p)
+            //  space O(p)
+            //  still not satisfied
+
+            string[] wordList = s.Split(" ");
+            if (pattern.Length != wordList.Length)
+                return false;
+            string[] charMapping = new string[256];
+            Dictionary<string, char> wordMapping = [];
+            for (int i = 0; i < pattern.Length; i++)
+            {
+                string word = wordList[i];
+                char c = pattern[i];
+                if (charMapping[c] == null)
+                {
+                    charMapping[c] = word;
+                }
+                else if (charMapping[c] != word)
+                {
+                    return false;
+                }
+
+                if (wordMapping.TryGetValue(word, out char key))
+                {
+                    if (c != key || charMapping[key] != word)
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    wordMapping.Add(word, c);
+                }
+            }
+            return true;
+        }
+
+        private static bool Solution2(string pattern, string s)
+        {
             //  the idea is to reverse it and loop on words of string s
             //  keep tracking of mapping in both ways
             //  time complexity of O(n)
