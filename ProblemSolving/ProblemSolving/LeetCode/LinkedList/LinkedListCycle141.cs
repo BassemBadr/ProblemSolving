@@ -1,6 +1,4 @@
-﻿using ProblemSolving.LeetCode.LinkedList.Types;
-
-namespace ProblemSolving.LeetCode.LinkedList
+﻿namespace ProblemSolving.LeetCode.LinkedList
 {
     public class LinkedListCycle141
     {
