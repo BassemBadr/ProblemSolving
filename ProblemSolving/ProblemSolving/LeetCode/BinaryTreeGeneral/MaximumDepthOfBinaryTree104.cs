@@ -1,5 +1,4 @@
 ﻿using ProblemSolving.LeetCode.Types;
-using System.Xml.Linq;
 
 namespace ProblemSolving.LeetCode.BinaryTreeGeneral
 {
