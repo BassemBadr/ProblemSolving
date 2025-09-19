@@ -1,6 +1,8 @@
 ﻿#nullable disable
 
-namespace ProblemSolving.LeetCode.LinkedList
+using ProblemSolving;
+
+namespace ProblemSolving.LeetCode.Types
 {
     public class ListNode
     {

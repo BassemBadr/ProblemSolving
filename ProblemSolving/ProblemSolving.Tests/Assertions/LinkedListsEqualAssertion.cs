@@ -1,4 +1,4 @@
-﻿using ProblemSolving.LeetCode.LinkedList;
+﻿using ProblemSolving.LeetCode.Types;
 using ProblemSolving.Tests.Constraints;
 
 namespace ProblemSolving.Tests.Assertions

@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework.Constraints;
-using ProblemSolving.LeetCode.LinkedList;
+using ProblemSolving.LeetCode.Types;
 
 namespace ProblemSolving.Tests.Constraints
 {

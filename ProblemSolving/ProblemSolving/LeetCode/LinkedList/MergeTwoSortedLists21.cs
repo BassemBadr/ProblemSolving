@@ -1,4 +1,6 @@
-﻿namespace ProblemSolving.LeetCode.LinkedList
+﻿using ProblemSolving.LeetCode.Types;
+
+namespace ProblemSolving.LeetCode.LinkedList
 {
     public class MergeTwoSortedLists21
     {

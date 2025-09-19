@@ -1,5 +1,6 @@
 ﻿#nullable disable
 using ProblemSolving.LeetCode.LinkedList;
+using ProblemSolving.LeetCode.Types;
 
 namespace ProblemSolving.Tests.Helpers
 {
