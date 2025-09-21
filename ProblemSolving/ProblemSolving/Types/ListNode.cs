@@ -2,7 +2,7 @@
 
 using ProblemSolving;
 
-namespace ProblemSolving.LeetCode.Types
+namespace ProblemSolving.Types
 {
     public class ListNode
     {

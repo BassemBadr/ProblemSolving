@@ -1,4 +1,4 @@
-﻿namespace ProblemSolving.LeetCode.Types
+﻿namespace ProblemSolving.Types
 {
     public class TreeNode
     {

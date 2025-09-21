@@ -1,7 +1,7 @@
 ﻿using ProblemSolving.LeetCode.LinkedList;
-using ProblemSolving.LeetCode.Types;
 using ProblemSolving.Tests.Assertions;
 using ProblemSolving.Tests.Helpers;
+using ProblemSolving.Types;
 
 namespace ProblemSolving.Tests.LeetCode.LinkedList
 {

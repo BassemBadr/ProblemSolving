@@ -1,4 +1,4 @@
-﻿using ProblemSolving.LeetCode.Types;
+﻿using ProblemSolving.Types;
 
 namespace ProblemSolving.LeetCode.LinkedList
 {

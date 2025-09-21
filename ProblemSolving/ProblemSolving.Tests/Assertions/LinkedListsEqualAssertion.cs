@@ -1,5 +1,5 @@
-﻿using ProblemSolving.LeetCode.Types;
-using ProblemSolving.Tests.Constraints;
+﻿using ProblemSolving.Tests.Constraints;
+using ProblemSolving.Types;
 
 namespace ProblemSolving.Tests.Assertions
 {

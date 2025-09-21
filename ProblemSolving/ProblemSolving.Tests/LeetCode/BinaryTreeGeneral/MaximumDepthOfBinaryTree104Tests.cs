@@ -1,6 +1,6 @@
 ﻿using ProblemSolving.LeetCode.BinaryTreeGeneral;
-using ProblemSolving.LeetCode.Types;
 using ProblemSolving.Tests.Helpers;
+using ProblemSolving.Types;
 
 namespace ProblemSolving.Tests.LeetCode.BinaryTreeGeneral
 {
