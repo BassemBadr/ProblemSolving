@@ -317,5 +317,33 @@ namespace ProblemSolving.Tests.LeetCode.BinaryTreeGeneral
             //  Assert
             Assert.That(result, Is.False);
         }
+
+        [Test]
+        public void IsSameTree_IdenticalSimpleLargeTrees_ReturnsTrue()
+        {
+            //  Arrange
+            TreeNode p = BinaryTreeHelper.CreateBinaryTree([1, 2, 3, 4, 5, 6, 7]);
+            TreeNode q = BinaryTreeHelper.CreateBinaryTree([1, 2, 3, 4, 5, 6, 7]);
+
+            //  Act
+            bool result = _solution.IsSameTree(p, q);
+
+            //  Assert
+            Assert.That(result, Is.True);
+        }
+
+        [Test]
+        public void IsSameTree_NormalCase1_ReturnsFalse()
+        {
+            //  Arrange
+            TreeNode p = BinaryTreeHelper.CreateBinaryTree([2, null, 4]);
+            TreeNode q = BinaryTreeHelper.CreateBinaryTree([2, 3, 4]);
+
+            //  Act
+            bool result = _solution.IsSameTree(p, q);
+
+            //  Assert
+            Assert.That(result, Is.False);
+        }
     }
 }
